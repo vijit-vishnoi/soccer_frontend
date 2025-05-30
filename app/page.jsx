@@ -24,7 +24,7 @@ export default function FootballMatches() {
       setLoading(true)
       try {
         // Replace this with your actual API endpoint
-        const response = await fetch('http://localhost:3001/upcoming')
+        const response = await fetch('https://soccer-db-55fu.onrender.com/upcoming')
 
         const data = await response.json()
         const formatted = data.map((match, index) => ({
