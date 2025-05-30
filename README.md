@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚽ Football Matches – Frontend (Next.js)
 
-## Getting Started
+A beautiful and responsive **Next.js** app to display upcoming football matches using your custom API. This frontend interfaces with the backend API you created and visualizes match data with filtering, search, and live notifications toggle.
 
-First, run the development server:
+---
+
+## 🎯 Features
+
+- 🔍 **Searchable**: Find matches by team or venue.
+- 🏷️ **Filter by League**: Quickly narrow matches down by league.
+- 🔔 **Toggle Notifications**: Set match alerts (UI only).
+- ⚡ **Real-time Look**: Auto fetch from your Node.js backend.
+- 🎨 **Modern UI**: Tailwind CSS + Lucide icons + Gradient cards.
+
+---
+
+## 🛠️ Tech Stack
+
+- [Next.js](https://nextjs.org/) (App Router)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Lucide React Icons](https://lucide.dev/)
+- [ShadCN UI](https://ui.shadcn.com/) components
+- [Node.js Backend](https://github.com/vijit-vishnoi/soccer_db) (for match API)
+
+---
+
+## 📦 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/your-frontend-repo.git
+cd your-frontend-repo
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+or
+
+```bash
+yarn install
+```
+
+### 3. Connect to your backend
+
+Make sure your backend is running at:
+
+```
+http://localhost:3001/upcoming
+```
+
+If not, change the API endpoint in the frontend code (`fetch('http://localhost:3001/upcoming')`) accordingly.
+
+### 4. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+or
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Your app will be available at [http://localhost:3000](http://localhost:3000)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📡 API Source
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This frontend consumes data from the following backend endpoint:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+GET http://localhost:3001/upcoming
+```
 
-## Deploy on Vercel
+Expected response:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```json
+[
+  {
+    "home": "Flamengo",
+    "away": "Palmeiras",
+    "date": "2025-06-01T23:00:00Z"
+  }
+]
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🧪 Preview
+
+![Preview Screenshot](./preview.png)
+
+
+
+---
+
+
+
+## 🧠 Notes
+
+- The notification system is UI-only — no real push notifications.
+- League filtering is hardcoded to "Brasileirão" from backend response.
+- The `venue` field is marked as "TBD" due to API limitations.
+
+---
+
+## 🌐 Deployment
+
+You can deploy this Next.js app to any of the following:
+
+- [Vercel](https://vercel.com/) (Recommended)
+- [Netlify](https://netlify.com/)
+- [Render](https://render.com/)
+- [GitHub Pages (via static export)](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports)
+
+---
+
+## 📃 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 🙌 Acknowledgements
+
+- [ShadCN UI](https://ui.shadcn.com/)
+- [Lucide Icons](https://lucide.dev/)
+- [Football-Data.org](https://www.football-data.org/)
